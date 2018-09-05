@@ -7,6 +7,7 @@ if praatVersion < 6039
 endif
 
 ## Dynamic menu
+Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (time)...", "Draw...", 1, "scripts/draw_tg&time.praat"
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (inside)...", "Draw...", 1, "scripts/draw_tg&in.praat"
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (outside)...", "Draw...", 1, "scripts/draw_tg&out.praat"
 
