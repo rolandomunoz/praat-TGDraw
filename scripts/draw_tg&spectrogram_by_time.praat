@@ -1,15 +1,12 @@
+# Created by Rolando Munoz (2018-09-19)
+
+include ../procedures/select_viewport.proc
+
 form TextGrid & Spectrogram: Draw (segment duration)...
-  comment Spectrogram settings...
-  real left_Time_range_(s) 0.0
-  real right_Time_range_(s) 0.0 (=all)
-  real left_Frequency_range_(Hz) 0.0
-  real right_Frequency_range_(Hz) 5000
-  real Dynamic_range_(Db) 50.0
-  boolean Left_marks 0
-  comment TextGrid settings...
-  comment Get duration info from tier:
+  sentence Draw_Tiers 1
+  comment Get duration from...
   natural Tier_number 1
-  optionmenu Count_intervals_whose_label: 1
+  optionmenu Count_intervals_whose_label: 2
     option is equal to
     option is not equal to
     option contains
@@ -25,34 +22,39 @@ form TextGrid & Spectrogram: Draw (segment duration)...
     option contains a word ending with
     option does not contain a word ending with
     option matches (regex)
-  sentence the_text a
+  sentence the_text 
   boolean Scale_duration 0
+  comment Spectrogram settings...
+  real left_Time_range_(s) 0.0
+  real right_Time_range_(s) 0.0 (=all)
+  real left_Frequency_range_(Hz) 0.0
+  real right_Frequency_range_(Hz) 5000
+  real Dynamic_range_(Db) 50.0
+  boolean Left_marks 0
 endform
 
 tg= selected("TextGrid")
 spectrogram=selected("Spectrogram")
 selectObject: tg
 
-info$= Picture info
+tierList#= {'draw_Tiers$'}
+nTiers= size(tierList#)
+tgTier#= zero# (nTiers)
 
-nTiers= Get number of tiers
-tierHeight= nTiers*0.5
-totalHeight= tierHeight + 2
-drawHeight= totalHeight - tierHeight
+for i to nTiers
+  selectObject: tg
+  tgTier# [i]= Extract one tier: tierList# [i]
+endfor
+
+selectObject: tgTier#
+tgDraw= Merge
+@textGrid2viewport: nTiers
 
 # Draw
-xmin= extractNumber(info$, "Inner viewport left:")
-xmax= extractNumber(info$, "Inner viewport right:")
-width= xmax - xmin
 
-ymin= extractNumber(info$, "Inner viewport top:")
-ymax= extractNumber(info$, "Inner viewport bottom:")
-height= ymax- ymin
-
-temp= (height/totalHeight)*tierHeight
-Select inner viewport: xmin, xmax, ymin, ymax - temp
 # Paint something
 selectObject: spectrogram
+@selectDrawArea
 Paint: left_Time_range, right_Time_range, left_Frequency_range, right_Frequency_range, 100, "yes", dynamic_range, 6, 0, "no"
 if left_marks
   Marks left every: 1, 1000, "yes", "yes", "yes"
@@ -61,9 +63,11 @@ One mark left: right_Frequency_range, "yes", "yes", "no", ""
 One mark left: left_Frequency_range, "yes", "yes", "no", ""
 Text left: "yes", "Frequency (Hz)"
 
+# Draw TextGrid
 selectObject: tg
-tierTemp= Extract one tier: tier_number
 
+## Draw duration
+tierTemp= Extract one tier: tier_number
 tierTableTemp= Down to Table: "no", 16, "no", "no"
 tierTable= nowarn Extract rows where column (text): "text", count_intervals_whose_label$, the_text$
 Append column: "dur"
@@ -83,8 +87,9 @@ endfor
 removeObject: tierTable, tierTableTemp, tierTemp
 
 # Draw TextGrid
-Select inner viewport: xmin, xmax, ymin, ymax
-selectObject: tg 
+selectObject: tgDraw
+@selectTextGrid
 Draw: left_Time_range, right_Time_range, "yes", "yes", "yes"
 
+removeObject: tgTier#, tgDraw
 selectObject: tg, spectrogram

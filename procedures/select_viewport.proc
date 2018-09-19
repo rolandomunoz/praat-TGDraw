@@ -1,0 +1,56 @@
+# Created by Rolando Munoz (20180918)
+
+#! ~~~ params
+#! in:
+#!   .number_of_tiers:
+#! out:
+#!   .vp_const:
+#!   .vp_tierTotalHeight:
+#!   .vp_drawHeight:
+#! selection:
+#!   in:
+#!     TextGrid
+#!   out:
+#!     nothing
+#! ~~~
+#!
+#! Scale Viewport to TextGrid
+#!
+procedure textGrid2viewport: .number_of_tiers
+  # Viewport height size
+  .info$= Picture info
+  ## Get width values
+  .vp_xmin= extractNumber(.info$, "Inner viewport left:")
+  .vp_xmax= extractNumber(.info$, "Inner viewport right:")
+  .vp_width= .vp_xmax - .vp_xmin
+
+  ## Get height values
+  .vp_ymin= extractNumber(.info$, "Inner viewport top:")
+  .vp_ymax= extractNumber(.info$, "Inner viewport bottom:")
+  .vp_height= .vp_ymax- .vp_ymin
+
+  # TextGrid height size
+  .tg_tierHeight= 0.5
+  .tg_drawHeight= 2
+  .tg_tierTotalHeight= .number_of_tiers*.tg_tierHeight
+  .tg_totalHeight= .tg_tierTotalHeight + .tg_drawHeight
+
+ # vp/tg
+  .vp_const= .vp_height/.tg_totalHeight
+  .vp_tierTotalHeight =.tg_tierTotalHeight * .vp_const
+  .vp_drawHeight  = .tg_drawHeight * .vp_const
+endproc
+
+procedure selectTextGrid
+  Select inner viewport: textGrid2viewport.vp_xmin, textGrid2viewport.vp_xmax, textGrid2viewport.vp_ymin, textGrid2viewport.vp_ymax
+endproc
+
+procedure selectDrawArea
+  .ymax= textGrid2viewport.vp_ymin + textGrid2viewport.vp_drawHeight
+  Select inner viewport: textGrid2viewport.vp_xmin, textGrid2viewport.vp_xmax, textGrid2viewport.vp_ymin, .ymax
+endproc
+
+procedure selectTierArea
+  .ymin= textGrid2viewport.vp_ymin + textGrid2viewport.vp_drawHeight
+  Select inner viewport: textGrid2viewport.vp_xmin, textGrid2viewport.vp_xmax, .ymin, textGrid2viewport.vp_ymax
+endproc
