@@ -18,3 +18,12 @@ Add action command: "TextGrid", 1, "Spectrogram", 1, "", 0, "Draw...", "Draw -",
 
 Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw -", "", 0, ""
 Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw...", "Draw -", 1, "scripts/draw_tg&pitch.praat"
+
+# Praat Picture
+Add menu command: "TextGridEditor", "File", "Draw visible Spectrogram and TextGrid...", "", 0, "scripts/editor_draw_tg&spectrogram_selected.praat"
+
+Add menu command: "Picture", "Select", "Select upper part (TextGrid)...", "Select inner viewport...", 0, "scripts/select_tg_upper_part.praat"
+Add menu command: "Picture", "Select", "Select lower part (TextGrid)...", "Select inner viewport...", 0, "scripts/select_tg_lower_part.praat"
+
+# Main command
+#Add menu command: "Objects", "Praat", "Compare F0...", "FP tools", 1, "scripts/compare_f0.praat"
