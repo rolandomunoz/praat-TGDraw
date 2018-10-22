@@ -15,8 +15,9 @@ Add action command: "TextGrid", 1, "Spectrogram", 1, "", 0, "Draw -", "", 0, ""
 Add action command: "TextGrid", 1, "Spectrogram", 1, "", 0, "Draw (with duration)...", "Draw -", 1, "scripts/draw_tg&spectrogram_by_time.praat"
 Add action command: "TextGrid", 1, "Spectrogram", 1, "", 0, "Draw...", "Draw -", 1, "scripts/draw_tg&spectrogram.praat"
 
-Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw -", "", 0, ""
-Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw...", "Draw -", 1, "scripts/draw_tg&pitch.praat"
+# Pitch
+Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw separately by tier...", "Draw separately...", 1, "scripts/draw_separately_pitch_by_tier.praat"
+Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Speckle separately by tier...", "Speckle separately...", 1, "scripts/speckle_separately_pitch_by_tier.praat"
 
 Add menu command: "TextGridEditor", "File", "Draw visible Spectrogram and TextGrid...", "", 0, "scripts/editor_draw_tg&spectrogram_selected.praat"
 
