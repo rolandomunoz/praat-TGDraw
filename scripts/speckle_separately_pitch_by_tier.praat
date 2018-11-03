@@ -1,6 +1,6 @@
 # Created by Rolando Munoz (2018-09-19)
 
-form TextGrid & Pitch: Draw separately...
+form TextGrid & Pitch: Draw separately by tier...
   sentence Draw_Tiers 1
   real left_Time_range_(s) 0.0
   real right_Time_range_(s) 0.0 (=all)
