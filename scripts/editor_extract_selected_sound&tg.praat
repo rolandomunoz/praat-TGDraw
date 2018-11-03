@@ -19,7 +19,7 @@ if conserve_time
   tg= Extract selected TextGrid (preserve times)
 else
   sd= Extract selected sound (time from 0)
-  tg= Extract selected TextGrid (time from 0)  
+  tg= Extract selected TextGrid (time from 0)
 endif
 Select: tmin, tmax
 
