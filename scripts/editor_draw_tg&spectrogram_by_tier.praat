@@ -16,11 +16,15 @@ form Paint visible spectrogram and TextGrid (by tier)
   option far
   option near
   boolean Garnish 1
+  optionmenu Shade 2
+  option no
+  option current selection
+  option buffer
   boolean Shade_selection_time 1
   boolean Left_marks 0
 endform
 
-tempPath$ = "../temp.txt"
+tempPath$ = "../temp/setting_editor.txt"
 editorInfo$ = nocheck Editor info
 if editorInfo$ == ""
   temp$ = readFile$(tempPath$)
@@ -88,11 +92,20 @@ endif
 
 ## Draw TextGrid
 selectObject: tgDraw
-if shade_selection_time
-  @selectTierArea
+@selectTierArea
+if shade == 2
   Paint rectangle: "{0.8, 0.8, 0.8}", tmin_selection, tmax_selection, highest_frequency, lowest_frequency
+elsif shade == 3
+  timeIntervals = Read Table from comma-separated file: "../temp/time_interval.txt"
+  for i to object[timeIntervals].nrow
+    drawSelectionTimes_tmin = object[timeIntervals, i, "tmin"]
+    drawSelectionTimes_tmax = object[timeIntervals, i, "tmax"]
+    Paint rectangle: "{0.8, 0.8, 0.8}", drawSelectionTimes_tmin, drawSelectionTimes_tmax, highest_frequency, lowest_frequency
+  endfor
+  removeObject: timeIntervals  
 endif
 
+selectObject: tgDraw
 @selectTextGrid
 Draw: 0, 0, show_boundaries, 0, garnish
 

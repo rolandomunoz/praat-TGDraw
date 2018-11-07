@@ -10,24 +10,27 @@ form Draw visible pitch contour and TextGrid (by tier)
   boolean Show_boundaries 1
   comment Pitch:
   boolean Speckle 1
-  boolean Draw_optimal_range 1
+  boolean Smooth 1
+  boolean Adjust_margin 1
   comment Margin:
   optionmenu Writename_at_top 2
   option no
   option far
   option near
+  optionmenu Shade 2
+  option no
+  option current selection
+  option buffer
   boolean Garnish 1
-  boolean Shade_selection_time 1
 endform
 
-tempPath$ = "../temp.txt"
+tempPath$ = "../temp/setting_editor.txt"
 editorInfo$ = nocheck Editor info
 if editorInfo$ == ""
   temp$ = readFile$(tempPath$)
   tgOriginal = extractNumber(temp$, "editor:")
   editor: tgOriginal
     editorInfo$ = Editor info
-    
 endif
 
 editorInfo$ = Editor info
@@ -49,11 +52,11 @@ editor: tgOriginal
 endeditor
 tmin = Get start time
 tmax = Get end time
-if draw_optimal_range
-  q1= Get quantile: 0, 0, 0.25, "Hertz"
-  q2= Get quantile: 0, 0, 0.75, "Hertz"
-  pitch_floor = q1*0.75
-  pitch_ceiling = q2*1.5
+if smooth
+  # Calculate Hirst
+  pitch_old = pitch
+  pitch = Smooth: 20
+  removeObject: pitch_old
 endif
 
 selectObject: tgOriginal
@@ -80,16 +83,30 @@ endif
 ## Draw TextGrid
 Axes: tmin, tmax, 0, 1
 selectObject: tgDraw
-if shade_selection_time
+if shade == 2
   Paint rectangle: "{0.8, 0.8, 0.8}", tmin_selection, tmax_selection, 0, 1
+elsif shade == 3
+  #@selectTextGrid
+  timeIntervals = Read Table from comma-separated file: "../temp/time_interval.txt"
+  for i to object[timeIntervals].nrow
+    drawSelectionTimes_tmin = object[timeIntervals, i, "tmin"]
+    drawSelectionTimes_tmax = object[timeIntervals, i, "tmax"]
+    Paint rectangle: "{0.8, 0.8, 0.8}", drawSelectionTimes_tmin, drawSelectionTimes_tmax, 0, 1
+  endfor
+  removeObject: timeIntervals  
 endif
-@selectTextGrid
+
+selectObject: pitch
+if adjust_margin
+  pitch_ceiling = Get maximum: 0, 0, "Hertz", "Parabolic"
+  pitch_ceiling = pitch_ceiling*1.25
+endif
 
 selectObject: tgDraw, pitch
 if speckle
-  Speckle separately: 0, 0, pitch_floor, pitch_ceiling, show_boundaries, 0, garnish
+  Speckle separately: 0, 0, 50, pitch_ceiling, show_boundaries, 0, garnish
 else
-  Draw separately: 0, 0, pitch_floor, pitch_ceiling, show_boundaries, 0, garnish
+  Draw separately: 0, 0, 50, pitch_ceiling, show_boundaries, 0, garnish
 endif
 
 if writename_at_top == 2
