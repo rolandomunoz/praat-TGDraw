@@ -19,13 +19,12 @@ Add action command: "TextGrid", 1, "Spectrogram", 1, "", 0, "Draw...", "Draw -",
 Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw separately by tier...", "Draw separately...", 1, "scripts/draw_separately_pitch_by_tier.praat"
 Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Speckle separately by tier...", "Speckle separately...", 1, "scripts/speckle_separately_pitch_by_tier.praat"
 
+Add menu command: "TextGridEditor", "Select", "Save selection time...", "", 0, "scripts/editor_save_selection.praat"
 Add menu command: "TextGridEditor", "Spectrum", "Paint visible spectrogram and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
 Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
 
-
 # Praat Picture
 Add menu command: "Picture", "Select", "Select outer viewport (Grid layout)...", "Select outer viewport...", 0, "scripts/select_outer_viewport_by_grid_layout.praat"
-
 
 Add menu command: "Picture", "Select", "TextGrid area", "", 0, ""
 Add menu command: "Picture", "Select", "Select upper part...", "TextGrid area", 1, "scripts/select_tg_upper_part.praat"
