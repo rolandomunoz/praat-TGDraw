@@ -20,7 +20,6 @@ form Paint visible spectrogram and TextGrid (by tier)
   option no
   option current selection
   option buffer
-  boolean Shade_selection_time 1
   boolean Left_marks 0
 endform
 
