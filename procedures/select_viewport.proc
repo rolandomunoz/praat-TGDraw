@@ -54,3 +54,23 @@ procedure selectTierArea
   .ymin= textGrid2viewport.vp_ymin + textGrid2viewport.vp_drawHeight
   Select inner viewport: textGrid2viewport.vp_xmin, textGrid2viewport.vp_xmax, .ymin, textGrid2viewport.vp_ymax
 endproc
+
+procedure selectGrid: .row, .gridRows
+  # Viewport height size
+  .info$= Picture info
+  ## Get width values
+  .vp_xmin= extractNumber(.info$, "Inner viewport left:")
+  .vp_xmax= extractNumber(.info$, "Inner viewport right:")
+  .vp_width= .vp_xmax - .vp_xmin
+
+  ## Get height values
+  .vp_ymax= extractNumber(.info$, "Inner viewport bottom:")
+  .vp_ymin= extractNumber(.info$, "Inner viewport top:")
+  .vp_height= .vp_ymax- .vp_ymin
+
+ # Select
+  .vp_y = .vp_height/.gridRows
+  .vp_ymin = .vp_ymin + .vp_y*(.row-1)
+  .vp_ymax = .vp_ymin + .vp_y
+  Select inner viewport: .vp_xmin, .vp_xmax, .vp_ymin, .vp_ymax
+endproc
