@@ -123,7 +123,7 @@ One mark left: pitch_ceiling, "yes", "yes", "no", ""
 One mark left: (pitch_ceiling + pitch_floor)/2, "yes", "yes", "no", ""
 
 Text left: "yes", "F0 (Hz)"
-Line width: 2
+Line width: 5
 Draw line: tmin, pitch_floor, tmax, pitch_floor
 Line width: 1
 
