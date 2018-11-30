@@ -12,10 +12,8 @@ timeIntervalPath$ = "../temp/time_interval.txt"
 appendFileLine: timeIntervalPath$, tmin, ",", tmax
 if clear_history
   writeFileLine: timeIntervalPath$, "tmin,tmax"
-  output$ = ""
 else
   output$ = readFile$: timeIntervalPath$
   output$ = replace$(output$, ",", tab$, 0)
+  writeInfoLine: output$
 endif
-
-writeInfoLine: output$
