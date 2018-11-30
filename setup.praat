@@ -6,7 +6,7 @@ if praatVersion < 6039
   appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
 endif
 
-writeFileLine: "/temp/time_interval.txt", tmin, ",", tmax
+writeFileLine: "temp/time_interval.txt", "tmin,tmax"
 ## Dynamic menu
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (time)...", "Draw...", 1, "scripts/draw_tg&time.praat"
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (inside)...", "Draw...", 1, "scripts/draw_tg&in.praat"
