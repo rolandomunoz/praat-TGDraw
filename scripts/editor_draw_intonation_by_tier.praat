@@ -108,6 +108,7 @@ selectObject: pitch
 if adjust_margin
   pitch_ceiling = Get maximum: 0, 0, "Hertz", "Parabolic"
   pitch_ceiling = pitch_ceiling*1.25
+  pitch_floor = pitch_floor*0.75
 endif
 
 @selectDrawArea
@@ -123,7 +124,7 @@ One mark left: pitch_ceiling, "yes", "yes", "no", ""
 One mark left: (pitch_ceiling + pitch_floor)/2, "yes", "yes", "no", ""
 
 Text left: "yes", "F0 (Hz)"
-Line width: 5
+Line width: 3
 Draw line: tmin, pitch_floor, tmax, pitch_floor
 Line width: 1
 
