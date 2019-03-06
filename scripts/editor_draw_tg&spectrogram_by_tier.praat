@@ -11,7 +11,7 @@ form Paint visible spectrogram and TextGrid (by tier)
   comment Spectrogram:
   real Dynamic_range_(Db) 50.0
   comment Margin:
-  optionmenu Writename_at_top 2
+  optionmenu Writename_at_top 3
   option no
   option far
   option near

@@ -13,7 +13,7 @@ form Draw visible pitch contour and TextGrid (by tier)
   boolean Smooth 1
   boolean Adjust_margin 1
   comment Margin:
-  optionmenu Writename_at_top 2
+  optionmenu Writename_at_top 3
   option no
   option far
   option near
