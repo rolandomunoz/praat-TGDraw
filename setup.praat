@@ -15,6 +15,10 @@ Add menu command: "Objects", "Goodies", "tgDraw", "", 0, ""
 Add menu command: "Objects", "Goodies", "TextGridEditor preferences...", "tgDraw", 1, "scripts/editor_show_tg_editor_commands.praat"
 
 # Dynamic menu
+if show_tg_editor_commands
+  Add action command: "TextGrid", 1, "", 0, "", 0, "View & Edit alone (no warn)", "View & Edit alone", 0, "scripts/view_and_edit_alone.praat"
+endif
+
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (time)...", "Draw...", 1, "scripts/draw_tg&time.praat"
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (inside)...", "Draw...", 1, "scripts/draw_tg&in.praat"
 Add action command: "TextGrid", 1, "", 0, "", 0, "Draw (outside)...", "Draw...", 1, "scripts/draw_tg&out.praat"
