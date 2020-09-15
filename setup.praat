@@ -11,8 +11,8 @@ writeFileLine: "temp/time_interval.txt", "tmin,tmax"
 show_tg_editor_commands = readFile("temp/show_tg_editor_commands.txt")
 
 # Static menu
-Add menu command: "Objects", "Goodies", "tgDraw", "", 0, ""
-Add menu command: "Objects", "Goodies", "TextGridEditor preferences...", "tgDraw", 1, "scripts/editor_show_tg_editor_commands.praat"
+Add menu command: "Objects", "Goodies", "TextGrid Draw", "", 0, ""
+Add menu command: "Objects", "Goodies", "TextGridEditor preferences...", "TextGrid Draw", 1, "scripts/editor_show_tg_editor_commands.praat"
 
 # Dynamic menu
 if show_tg_editor_commands
