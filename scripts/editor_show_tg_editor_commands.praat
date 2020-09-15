@@ -1,8 +1,15 @@
-# Created by Rolando Munoz (2019-06)
+# Created by Rolando Munoz (Jun 2019)
 
-form TextGridEditor preferences
-  boolean Show_TextGridEditor_commands 0
-endform
+show_tg_editor_commands = readFile("../temp/show_tg_editor_commands.txt")
 
-writeFileLine: "../temp/show_tg_editor_commands.txt", string$(show_TextGridEditor_commands)
-writeInfoLine: "tgDraw... Please, restart Praat to see any change."
+beginPause: "TextGridEditor preferences"
+  boolean: "TextGridEditor commands", show_tg_editor_commands
+clicked = endPause: "Cancel", "Apply", "Ok", 3
+
+if clicked > 1
+  writeFileLine: "../temp/show_tg_editor_commands.txt", string$(textGridEditor_commands)
+  writeInfoLine: "TextGrid Draw... Please, restart Praat to see any change."
+  if clicked == 2
+    runScript: "editor_show_tg_editor_commands.praat"
+  endif
+endif
