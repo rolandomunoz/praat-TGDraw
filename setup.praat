@@ -1,18 +1,25 @@
-# Written by Rolando Munoz
-# Copyright 2018-2019
+# Setup script
 
-if praatVersion < 6039
-  appendInfoLine: "Draw TextGrid with"
-  appendInfoLine: "Warning: This plug-in only works on Praat version 6.0.39 or later. Please, get a more recent version of Praat."
-  appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
+if praatVersion < 6000
+    appendInfoLine: "plug-in: TextGrid PicMaker"
+    appendInfoLine: "Warning: "Please, update Praat to a more recent release. The plug-in was is not tested for 'praatVersion$'
+    appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
+elsif praatVersion == 6215
+    appendInfoLine: "plug-in: TextGrid PicMaker"
+    appendInfoLine: "Warning: The TextGridEditor commands doest not work well for 'praatVersion$'. Please, get a more recent release."
+    appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
+elsif praatVersion >= 6219
+    appendInfoLine: "plug-in: TextGrid PicMaker"
+    appendInfoLine: "Warning: At this moment, the TextGridEditor commands of the plug-in does not work for Praat 'praatVersion$'. Please, go back to Praat v6.2.18."
+    appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
 endif
 
 writeFileLine: "temp/time_interval.txt", "tmin,tmax"
 show_tg_editor_commands = readFile("temp/show_tg_editor_commands.txt")
 
 # Static menu
-Add menu command: "Objects", "Goodies", "TextGrid Draw", "", 0, ""
-Add menu command: "Objects", "Goodies", "TextGridEditor preferences...", "TextGrid Draw", 1, "scripts/editor_show_tg_editor_commands.praat"
+Add menu command: "Objects", "Goodies", "TextGrid PicMaker", "", 0, ""
+Add menu command: "Objects", "Goodies", "TextGridEditor preferences...", "TextGrid PictureMaker", 1, "scripts/editor_show_tg_editor_commands.praat"
 
 # Dynamic menu
 if show_tg_editor_commands
@@ -39,8 +46,13 @@ Add menu command: "Picture", "Select", "Select lower part...", "TextGrid area", 
 
 # TextGridEditor
 if show_tg_editor_commands
-  Add menu command: "TextGridEditor", "Select", "Save selection time...", "", 0, "scripts/editor_save_selection.praat"
-  Add menu command: "TextGridEditor", "Spectrum", "Paint visible spectrogram and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
-  Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
-  Add menu command: "TextGridEditor", "Pitch", "Draw visible intonation (by tier)...", "", 0, "scripts/editor_draw_intonation_by_tier.praat"
+    if praatVersion < 6215
+        Add menu command: "TextGridEditor", "Select", "Save selection time...", "", 0, "scripts/editor_save_selection.praat"
+        Add menu command: "TextGridEditor", "Spectrum", "Paint visible spectrogram and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
+    else
+        Add menu command: "TextGridEditor", "Time", "Save selection time...", "", 0, "scripts/editor_save_selection.praat"
+        Add menu command: "TextGridEditor", "Spectrogram", "Paint visible spectrogram and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
+    endif
+    Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
+    Add menu command: "TextGridEditor", "Pitch", "Draw visible intonation (by tier)...", "", 0, "scripts/editor_draw_intonation_by_tier.praat"
 endif
