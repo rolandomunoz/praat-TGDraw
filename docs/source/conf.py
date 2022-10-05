@@ -18,11 +18,11 @@ extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = []
-numfig  = True
-
+root_doc = 'index.rst'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+numfig  = True
