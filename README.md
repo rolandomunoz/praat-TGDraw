@@ -1,4 +1,4 @@
-# TextGrid Draw
+# Plug-in: TextGrid PicMaker
 
 A Praat plug-in to draw TextGrids along with acoustic information from several Praat objects. The easy way.
 
@@ -11,5 +11,5 @@ A Praat plug-in to draw TextGrids along with acoustic information from several P
 
 ## License
 
-This project is licensed under the GNU GPL terms - see the [LICENSE.md](https://github.com/rolandomunoz/plugin_draw_textgrid/blob/master/LICENSE)
+This project is licensed under the GNU GPL terms - see the [LICENSE](https://github.com/rolandomunoz/plugin_draw_textgrid/blob/master/LICENSE)
  file for details.
