@@ -1,7 +1,7 @@
 Installation
 ------------
 
-You can get the latest release of the plug-in in the following `link`_.
+You can get the latest release of the plug-in from its `website`_ on GitHub.
 
 In the website, go to the **Assets** section and download the compressed folder
 ``plugin_textgrid_picmaker.zip``.
@@ -60,4 +60,4 @@ Finally, check that Praat can recognize the plug-in. Start Praat and go to
    
    The plug-in menu
 
-.. _link: https://github.com/rolandomunoz/praat-textgrid_picmaker/releases/latest
+.. _website: https://github.com/rolandomunoz/praat-textgrid_picmaker/releases/latest

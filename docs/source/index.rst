@@ -6,9 +6,42 @@
 Welcome to TextGrid PicMaker's documentation!
 =============================================
 
-``TextGrid PicMaker`` is a Praat plug-in designed to create pictures of TextGrid and acoustic objects.
+`TextGrid PicMaker` is a Praat plug-in designed to create some default pictures
+that combines ``Spectrogram`` and/or ``Pitch`` objects along with ``TextGrid``.
 
-A Praat plug-in to draw TextGrids along with acoustic information from several Praat objects. The easy way.
+This plug-in also comes with some selecting-viewport mechanisms that will save
+you time when creating a picture manually, especially when putting objects
+together.
+
+Examples
+--------
+
+Here are some examples you can create by default:
+
+.. _spectrogram-perro.png:
+
+.. figure:: img/spectrogram-perro.png
+   :scale: 10
+   :align: center
+
+   Spectrogram and TextGrid
+
+.. _pitch_spectrogram-perro.png:
+
+.. figure:: img/pitch_spectrogram-perro.png
+  :scale: 20 
+  :align: center
+
+  Pitch, Spectrogram and TextGrid
+
+.. _pitch-perro.png:
+
+.. figure:: img/pitch-perro.png
+  :scale: 20 
+  :align: center
+
+  Pitch and TextGrid
+
 
 .. toctree::
    :maxdepth: 2
@@ -16,6 +49,7 @@ A Praat plug-in to draw TextGrids along with acoustic information from several P
 
    installation
    quickstart
+   commands
 
 Indices and tables
 ==================
