@@ -2,8 +2,7 @@
 
 A Praat plug-in to draw TextGrids along with acoustic information from several Praat objects. The easy way.
 
-## Documentation
-- [Wiki](https://github.com/rolandomunoz/plugin_draw_textgrid/wiki)
+Read the documentation of this plug-in [here](https://praat-textgrid-picmaker.readthedocs.io/en/latest/).
 
 ## Author
 
