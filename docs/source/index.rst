@@ -6,6 +6,10 @@
 Welcome to TextGrid PicMaker's documentation!
 =============================================
 
+``TextGrid PicMaker`` is a Praat plug-in designed to create pictures of TextGrid and acoustic objects.
+
+A Praat plug-in to draw TextGrids along with acoustic information from several Praat objects. The easy way.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
