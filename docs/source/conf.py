@@ -13,12 +13,11 @@ release = 'v0.4'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon']
 
-extensions = []
-
-templates_path = ['_templates']
+templates_path = []
 exclude_patterns = []
-root_doc = 'index'
+root_doc = 'source/index'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
