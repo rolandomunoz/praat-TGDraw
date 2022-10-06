@@ -23,6 +23,9 @@ root_doc = 'index'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = 'classic'
+html_theme_options = {
+    'stickysidebar':True
+}
+#html_static_path = ['_static']
 numfig  = True
