@@ -5,8 +5,8 @@ Quickstart
 Creating pictures from the TextGridEditor window
 ================================================
 
-A good starting point is the TextGridEditor (:numref:`textgrid_editor-window`),
-the window that we usually use when working with sounds and annotations.
+A good point to start is the TextGridEditor (:numref:`textgrid_editor-window`),
+the window we usually use when working with sounds and annotations.
 
 .. _textgrid_editor-window:
 
@@ -16,13 +16,13 @@ the window that we usually use when working with sounds and annotations.
 
    The TextGridEditor window
 
-Activate plug-in commands
--------------------------
+Activate the plug-in commands
+-----------------------------
 
-The plug-in comes with a set of commands that can be inserted into the TextGridEditor
+The plug-in comes with a set of commands that can be found in the TextGridEditor
 menu. These commands are deactivated by default. To activate them, go to the
 plug-in menu in the `Objects window` (``Praat > Goodies > textgrid picmaker``)
-and click on the only command ``TextGridEditor preferences``. In the dialogue
+and click on the command ``TextGridEditor preferences``. In the dialogue
 box, check the button ``Show commands in TextGridEditor`` and press `Ok`, then
 restart Praat. Once this is done, open a Sound and its TextGrid in the
 TextGridEditor. Now, when you navigate on the Pitch and Spectrogram menus, you
@@ -65,8 +65,8 @@ These are the commands added:
 
    You can also deactivate the TextGridEditor commands.
 
-Picture: Spectrogram and TextGrid
----------------------------------
+Picture a Spectrogram and TextGrid
+----------------------------------
 
 For this example, open a Sound and its TextGrid object in the TextGridEditor as
 in :numref:`textgrid_editor-selection`.
@@ -83,8 +83,8 @@ Note that in the figure, the current view is set to match the transcribed word.
 I have also selected the portion of time correponding to the vowel ``e``.
 
 Go to the ``Spectrogram`` menu and click on the command
-``Paint visible spectrogram and TextGrid (by tier)...``. A dialogue box will
-appear as in :numref:`dialogue_box-spectrogram&textgrid` will appear. Leave the
+``Paint visible spectrogram and TextGrid (by tier)...``. A dialogue box similar
+to the :numref:`dialogue_box-spectrogram&textgrid` will appear. Leave the
 default options and click on `Ok`.
 
 .. _dialogue_box-spectrogram&textgrid:
@@ -105,14 +105,14 @@ You will get a picture as in :numref:`paint_perro`.
 
   Resulting picture 
 
-As you can see, the plug-in takes the current view of the TextGridEditor and
-pictures it into the Praat Picture window. The Spectrogram and the first tier
-of the Textgrid are shown. The selection we did is also hightlighted.
+As you can see, the plug-in captures the current view of the TextGridEditor and
+put it into the Praat Picture window. Here, the spectrogram and the first tier
+of the TextGrid are shown. The selection we did is also hightlighted.
 
 We can tweak our picture by changing some of the values in the dialogue box.
-For example, if we want to draw the second and first tier in that order, we can
-set the ``Draw tiers`` field to ``2, 1``. This will print the
-:numref:`paint_perro2`
+For example, if we want to that our picture includes the second and first tier
+of the TextGrid, in that order, we can set the ``Draw tiers`` field to ``2, 1``.
+This will print the :numref:`paint_perro2`.
 
 .. _paint_perro2:
 
@@ -160,3 +160,15 @@ will get a picture as in :numref:`paint_perro3`.
   :align: center
 
   Resulting picture 
+
+Picture Pitch and TextGrid
+--------------------------
+
+Creating a picture that includes Pitch and TextGrid is easy. First, make sure
+that the pitch is visible in the spectrogram, and then go to
+``Draw visible pitch contour and TextGrid (by tier)...``.
+
+Picture Pitch, Spectrogram and TextGrid
+---------------------------------------
+
+pass

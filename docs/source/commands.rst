@@ -7,11 +7,18 @@ Command ``Paint visible Spectrogram and TextGrid (by tier)...``
 Some of the fields are the same as the ones in
 ``Draw visible sound and TextGrid``.
 
+.. function:: Paint visible Spectrogram and TextGrid (by tier)...
+
+  :param "Erase first": This is equivalent to ``Edit > Erase all``
+
+in the *Picture*
+  window.
+
+Use it to erase the any previous image, so your picture will not
+  overlap.
+
 Picture window
 
-* **Erase first:** This is equivalent to ``Edit > Erase all`` in the *Picture*
-  window. Use it to erase the any previous image, so your picture will not
-  overlap.
 
 TextGrid
 

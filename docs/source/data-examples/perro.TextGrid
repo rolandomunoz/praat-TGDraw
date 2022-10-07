@@ -1,0 +1,66 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 0.7380498866213152 
+tiers? <exists> 
+size = 3 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "segmento" 
+        xmin = 0 
+        xmax = 0.7380498866213152 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.06550838624696173 
+            text = "" 
+        intervals [2]:
+            xmin = 0.06550838624696173 
+            xmax = 0.17839524606714333 
+            text = "p" 
+        intervals [3]:
+            xmin = 0.17839524606714333 
+            xmax = 0.38002963719249916 
+            text = "e" 
+        intervals [4]:
+            xmin = 0.38002963719249916 
+            xmax = 0.44392785973222465 
+            text = "rr" 
+        intervals [5]:
+            xmin = 0.44392785973222465 
+            xmax = 0.5632045418063788 
+            text = "o" 
+        intervals [6]:
+            xmin = 0.5632045418063788 
+            xmax = 0.7380498866213152 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "palabra" 
+        xmin = 0 
+        xmax = 0.7380498866213152 
+        intervals: size = 3 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.06550838624696173 
+            text = "" 
+        intervals [2]:
+            xmin = 0.06550838624696173 
+            xmax = 0.5632045418063788 
+            text = "perro" 
+        intervals [3]:
+            xmin = 0.5632045418063788 
+            xmax = 0.7380498866213152 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "comentario" 
+        xmin = 0 
+        xmax = 0.7380498866213152 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.7380498866213152 
+            text = "" 

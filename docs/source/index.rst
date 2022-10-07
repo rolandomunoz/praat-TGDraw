@@ -13,8 +13,16 @@ This plug-in also comes with some selecting-viewport mechanisms that will save
 you time when creating a picture manually, especially when putting objects
 together.
 
-Examples
---------
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   installation
+   quickstart
+   commands
+
+Some examples
+-------------
 
 Here are some examples you can create by default:
 
@@ -41,15 +49,6 @@ Here are some examples you can create by default:
   :align: center
 
   Pitch and TextGrid
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   installation
-   quickstart
-   commands
 
 Indices and tables
 ==================
