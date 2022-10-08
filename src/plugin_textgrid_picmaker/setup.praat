@@ -6,11 +6,11 @@ if praatVersion < 6000
     appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
 elsif praatVersion == 6215
     appendInfoLine: "plug-in: TextGrid Picmaker"
-    appendInfoLine: "Warning: The TextGridEditor commands doest not work well for 'praatVersion$'. Please, get a more recent release."
+    appendInfoLine: "Warning: The TextGridEditor commands does not not work well for 'praatVersion$'. Please, get a more recent release."
     appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
-elsif praatVersion >= 6219
+elsif praatVersion >= 6219 and praatVersion < 6223
     appendInfoLine: "plug-in: TextGrid PicMaker"
-    appendInfoLine: "Warning: At this moment, the TextGridEditor commands of the plug-in does not work for Praat 'praatVersion$'. Please, go back to Praat v6.2.18."
+    appendInfoLine: "Warning: The TextGridEditor commands does not not work well for 'praatVersion$'. Please, get a more recent release."
     appendInfoLine: "Praat website: http://www.fon.hum.uva.nl/praat/"
 endif
 
