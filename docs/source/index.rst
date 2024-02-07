@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to TextGrid PicMaker's documentation!
+Welcome to TextGridDraw's documentation!
 =============================================
 
-`TextGrid PicMaker` is a Praat plug-in designed to create some default pictures
+`TextGridDraw` is a Praat plug-in designed to create some default pictures
 that combines ``Spectrogram`` and/or ``Pitch`` objects along with ``TextGrid``.
 
 This plug-in also comes with some selecting-viewport mechanisms that will save
