@@ -1,4 +1,4 @@
-# Plug-in: TextGrid PicMaker
+# Plug-in: TextGridDraw
 
 A Praat plug-in to draw TextGrids along with acoustic information from several Praat objects. The easy way.
 
