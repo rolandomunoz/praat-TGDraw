@@ -51,7 +51,7 @@ is a view of the plug-in folder.
 
 Finally, check that Praat can recognize the plug-in. Start Praat and go to
 ``Praat > Goodies`` in the menu bar. There, you should be able to see the
-``TextGrid picmaker`` submenu as in the :numref:`plugin_menu`.
+``TextGridDraw`` submenu as in the :numref:`plugin_menu`.
 
 .. _plugin_menu:
 
@@ -60,4 +60,4 @@ Finally, check that Praat can recognize the plug-in. Start Praat and go to
    
    The plug-in menu
 
-.. _website: https://github.com/rolandomunoz/praat-textgrid_picmaker/releases/latest
+.. _website: https://github.com/rolandomunoz/textgrid_draw/releases/latest
