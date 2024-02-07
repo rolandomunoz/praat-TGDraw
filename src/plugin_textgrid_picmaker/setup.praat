@@ -39,20 +39,34 @@ Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Draw separately by tier..
 Add action command: "TextGrid", 1, "Pitch", 1, "", 0, "Speckle separately by tier...", "Speckle separately...", 1, "scripts/speckle_separately_pitch_by_tier.praat"
 
 # Praat Picture
-Add menu command: "Picture", "Select", "Select outer viewport (Grid layout)...", "Select outer viewport...", 0, "scripts/select_outer_viewport_by_grid_layout.praat"
-Add menu command: "Picture", "Select", "TextGrid area", "", 0, ""
-Add menu command: "Picture", "Select", "Select upper part...", "TextGrid area", 1, "scripts/select_tg_upper_part.praat"
-Add menu command: "Picture", "Select", "Select lower part...", "TextGrid area", 1, "scripts/select_tg_lower_part.praat"
+Add menu command: "Picture", "Select", "TextGridDraw", "", 0, ""
+Add menu command: "Picture", "Select", "Select upper part...", "TextGridDraw", 1, "scripts/select_tg_upper_part.praat"
+Add menu command: "Picture", "Select", "Select lower part...", "TextGridDraw", 1, "scripts/select_tg_lower_part.praat"
+Add menu command: "Picture", "Select", "-", "TextGridDraw", 1, "scripts/select_outer_viewport_by_grid_layout.praat"
+
+Add menu command: "Picture", "Select", "Select outer viewport (Grid layout)...", "TextGridDraw", 1, "scripts/select_outer_viewport_by_grid_layout.praat"
 
 # TextGridEditor
 if show_tg_editor_commands
     if praatVersion < 6215
         Add menu command: "TextGridEditor", "Select", "Save selection time...", "", 0, "scripts/editor_save_selection.praat"
         Add menu command: "TextGridEditor", "Spectrum", "Paint visible spectrogram and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
-    else
+        Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
+        Add menu command: "TextGridEditor", "Pitch", "Draw visible intonation (by tier)...", "", 0, "scripts/editor_draw_intonation_by_tier.praat"
+    elif praatVersion < 6318
         Add menu command: "TextGridEditor", "Time", "Save selection time...", "", 0, "scripts/editor_save_selection.praat"
         Add menu command: "TextGridEditor", "Spectrogram", "Paint visible spectrogram and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
+        Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
+        Add menu command: "TextGridEditor", "Pitch", "Draw visible intonation (by tier)...", "", 0, "scripts/editor_draw_intonation_by_tier.praat"
+    else
+        Add menu command: "TextGridEditor", "Spectrogram", "- TextGridDraw:", "", 0, ""
+        Add menu command: "TextGridEditor", "Spectrogram", "Paint visible spectrogram and TextGrid (by tier)...", "", 1, "scripts/editor_draw_tg&spectrogram_by_tier.praat"
+
+        Add menu command: "TextGridEditor", "Pitch", "- TextGridDraw:", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
+        Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 1, "scripts/editor_draw_tg&pitch_by_tier.praat"
+        Add menu command: "TextGridEditor", "Pitch", "Draw visible intonation (by tier)...", "", 1, "scripts/editor_draw_intonation_by_tier.praat"
+
+        Add menu command: "TextGridEditor", "Time", "- TextGridDraw:", "", 0, ""
+        Add menu command: "TextGridEditor", "Time", "Save selection time...", "", 1, "scripts/editor_save_selection.praat"
     endif
-    Add menu command: "TextGridEditor", "Pitch", "Draw visible pitch contour and TextGrid (by tier)...", "", 0, "scripts/editor_draw_tg&pitch_by_tier.praat"
-    Add menu command: "TextGridEditor", "Pitch", "Draw visible intonation (by tier)...", "", 0, "scripts/editor_draw_intonation_by_tier.praat"
 endif
