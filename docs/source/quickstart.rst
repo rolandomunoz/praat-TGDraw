@@ -21,7 +21,7 @@ Activate the plug-in commands
 
 The plug-in comes with a set of commands that can be found in the TextGridEditor
 menu. These commands are deactivated by default. To activate them, go to the
-plug-in menu in the `Objects window` (``Praat > Goodies > textgrid picmaker``)
+plug-in menu in the `Objects window` (``Praat > Goodies > TGDraw``)
 and click on the command ``TextGridEditor preferences``. In the dialogue
 box, check the button ``Show commands in TextGridEditor`` and press `Ok`, then
 restart Praat. Once this is done, open a Sound and its TextGrid in the

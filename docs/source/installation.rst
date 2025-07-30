@@ -4,7 +4,7 @@ Installation
 You can get the latest release of the plug-in from its `website`_ on GitHub.
 
 In the website, go to the **Assets** section and download the compressed folder
-``plugin_textgrid_picmaker.zip``.
+``plugin_TGDraw.zip``.
 
 .. _github-download:
 
@@ -51,7 +51,7 @@ is a view of the plug-in folder.
 
 Finally, check that Praat can recognize the plug-in. Start Praat and go to
 ``Praat > Goodies`` in the menu bar. There, you should be able to see the
-``TextGridDraw`` submenu as in the :numref:`plugin_menu`.
+``TGDraw`` submenu as in the :numref:`plugin_menu`.
 
 .. _plugin_menu:
 
@@ -60,4 +60,4 @@ Finally, check that Praat can recognize the plug-in. Start Praat and go to
    
    The plug-in menu
 
-.. _website: https://github.com/rolandomunoz/textgrid_draw/releases/latest
+.. _website: https://github.com/rolandomunoz/praat-TGDraw/releases/latest
