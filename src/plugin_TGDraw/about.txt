@@ -7,4 +7,4 @@ Description:
   - Praat plug-in designed to create some default pictures that combines Spectrogram and/or Pitch objects along with TextGrid.
 License: GPL3
 How to cite: 
- - Muñoz A., Rolando (2025). TGDraw(v1.0)[Praat plug-in]. GitHub. Eetrived from https://github.com/rolandomunoz/praat-TGToolkit
+ - Muñoz A., Rolando (2025). TGDraw(v1.0)[Praat plug-in]. GitHub. Retrived from https://github.com/rolandomunoz/praat-TGToolkit
